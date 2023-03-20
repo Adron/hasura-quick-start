@@ -14,6 +14,8 @@ services:
     - db_data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgrespassword
+    ports:
+    - "5433:5432"
   mongodb:
     image: mongodb/mongodb-community-server
     environment:
@@ -45,7 +47,7 @@ services:
     restart: always
     environment:
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres_two:5432/postgres
-      PG_DATABASE_URL: postgres://postgres:postgrespassword@postgres_two:5432/postgres
+      PG_DATABASE_URL: postgres://postgres:postgrespassword@postgres_two:5433/postgres
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
       HASURA_GRAPHQL_DEV_MODE: "true"
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
