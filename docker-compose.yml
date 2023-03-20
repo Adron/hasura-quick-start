@@ -23,8 +23,8 @@ services:
       - type: bind
         source: ./data
         target: /data/db
-  graphql-engine:
-    image: hasura/graphql-engine:v2.20.0
+  graphql-engine-primary:
+    image: hasura/graphql-engine:v2.21.0
     ports:
     - "8080:8080"
     depends_on:
@@ -33,10 +33,21 @@ services:
     environment:
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
       PG_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
-      PG_DB_TWO: postgres://postgres:postgrespassword@postgres_two:5432/postgres
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_DEV_MODE: "true"
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
+  graphql-engine-tertiary:
+    image: hasura/graphql-engine:v2.21.0
+    ports:
+    - "8081:8080"
+    depends_on:
+    - "postgres"
+    restart: always
+    environment:
+      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres_two:5432/postgres
+      PG_DATABASE_URL: postgres://postgres:postgrespassword@postgres_two:5432/postgres
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
       HASURA_GRAPHQL_DEV_MODE: "true"
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
 volumes:
   db_data:
-
