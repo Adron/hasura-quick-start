@@ -7,6 +7,8 @@ services:
     - db_data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgrespassword
+    ports:
+    - "5432:5432"
   postgres_two:
     image: postgres:12
     restart: always
@@ -25,6 +27,8 @@ services:
       - type: bind
         source: ./data
         target: /data/db
+    ports:
+      - "27017:27017"
   graphql-engine-primary:
     image: hasura/graphql-engine:v2.21.0
     ports:
