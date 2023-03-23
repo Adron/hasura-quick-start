@@ -5,7 +5,8 @@ This is the N+1 getting started repo. I've taken the basics of getting started l
 
 This is a very basic Hasura project. To use this complete the following steps.
 
-
+1. Clone this repo `git clone `.
+2. 
 
 ## The Build
 
@@ -19,3 +20,4 @@ The steps I followed to build out this example starter includes:
 6. Continued building out the database from the console so that migrations would be built.
 7. Used the console to add some data, which added to the migrations.
 8. Finished.
+
