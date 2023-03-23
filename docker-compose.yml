@@ -9,17 +9,6 @@ services:
       POSTGRES_PASSWORD: postgrespassword
     ports:
     - "5432:5432"
-  mongodb:
-    image: mongodb/mongodb-community-server
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=mongoboss
-      - MONGO_INITDB_ROOT_PASSWORD=mongopassword!
-    volumes:
-      - type: bind
-        source: ./data
-        target: /data/db
-    ports:
-      - "27017:27017"
   graphql-engine-primary:
     image: hasura/graphql-engine:v2.21.0
     ports:
