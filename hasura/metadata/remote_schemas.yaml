@@ -1,1 +1,21 @@
-[]
+- name: graphql_api_remote
+  definition:
+    url: https://intense-oarfish-77.hasura.app/v1/graphql
+    timeout_seconds: 60
+    customization: {}
+    headers:
+      - name: x-hasura-admin-secret
+        value: 0h7HAiiSvNIFhnL6Gws3QJjqRJK155vrJe7AEfN4q2Z2ajguLxrj62jxZe7DVMPT
+  remote_relationships:
+    - relationships:
+        - definition:
+            to_source:
+              field_mapping:
+                name: name
+              relationship_type: array
+              source: default
+              table:
+                name: users
+                schema: public
+          name: onName
+      type_name: users_tertiary
