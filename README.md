@@ -20,4 +20,3 @@ The steps I followed to build out this example starter includes:
 6. Continued building out the database from the console so that migrations would be built.
 7. Used the console to add some data, which added to the migrations.
 8. Finished.
-
