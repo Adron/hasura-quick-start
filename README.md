@@ -7,10 +7,11 @@ This is a very basic Hasura project. To use this complete the following steps.
 
 1. Clone this repo `git clone `.
 2. From the root (where the docker-compose.yml file is located) execute `docker compose up -d`.
-3. Navigate now into the `hasura` directory and execute `hasura console`.
+3. Navigate into the `hasura` directory.
+4. Execute `hasura metadata apply`, then `hasura migrate apply`, and then `hasura metadata apply`.
 4. Go to the "Data" tab on the console interface and add a connection with the 'PG_DATABASE_URL' environment variable.
 5. Back at the terminal, execute `hasura migrate apply`. Select default or all databases when prompted which database to run migrations against.
-6. 
+6. Navigate now into the `hasura` directory and execute `hasura console`.
 
 ## The Build
 
