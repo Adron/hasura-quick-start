@@ -23,3 +23,10 @@ The steps I followed to build out this example starter includes:
 6. Continued building out the database from the console so that migrations would be built.
 7. Used the console to add some data, which added to the migrations.
 8. Finished. This is now what this existing repository consists of.
+
+## Projects Using This Repository
+
+There are other project(s) (currently just one [here](https://github.com/Adron/hasura-spring-boot-graphql)) that will use this as a base project. As I build out these other projects they will be listed here:
+
+* [hasura-spring-boot-graphql](https://github.com/Adron/hasura-spring-boot-graphql)
+* [hasura-dotnet-graphql](https://github.com/Adron/hasura-dotnet-graphql)
