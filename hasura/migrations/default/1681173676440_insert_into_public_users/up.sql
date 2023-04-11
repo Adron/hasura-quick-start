@@ -1,0 +1,1 @@
+INSERT INTO "public"."users"("name", "created_at", "updated_at", "id") VALUES (E'Abhishek', E'2023-04-11T00:41:16.412242+00:00', E'2023-04-11T00:41:16.412242+00:00', E'9552993e-927a-47cf-9cc4-6f8b914ec2c1');
